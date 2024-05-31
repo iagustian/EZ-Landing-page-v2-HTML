@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Real Estate Transaction Management &amp; Coordinator Software | EZ
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+        fill: var(--dl-color-gray-black);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="public/ez-favicon.svg"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #246b96;//magic
+       }
+    </style>
+    <style data-section-id="dropdown">
+      [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
+          display: flex;
+        }
+
+        [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
+          transform: rotate(90deg);
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_MEASUREMENT_ID%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '%REACT_APP_GA_MEASUREMENT_ID%');
+  </script> -->
+
+    <!-- Lucky Orange -->
+
+    <!-- FreshChat -->
+    <!-- <script src='//fw-cdn.com/2736569/3088424.js' chat='true'></script> -->
+
+    <!-- Freshdesk -->
+
+    <!-- Meta Pixel Code -->
+
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1553066931916834&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    <script
+      async=""
+      src="https://cdn.tolt.io/tolt.js"
+      data-tolt="81e6dc34-d8f3-4443-a30c-e2d31cba595f"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script
+      async=""
+      defer=""
+      src="https://tools.luckyorange.com/core/lo.js?site-id=18537fa4"
+    ></script>
+    <script>
+      window.fwSettings={
+      'widget_id':151000001468
+      };
+      !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
+    </script>
+    <script
+      type="text/javascript"
+      src="https://widget.freshworks.com/widgets/151000001468.js"
+      async=""
+      defer=""
+    ></script>
+    <script>
+          /*
+      Accordion - Code Embed
+      */
+
+      /* listenForUrlChangesAccordion() makes sure that if you changes pages inside your app,
+      the Accordions will still work*/
+
+      const listenForUrlChangesAccordion = () => {
+        let url = location.href;
+        $(document).on('click', () => {
+          requestAnimationFrame(() => {
+            if (url !== location.href) {
+              runAccordionCodeEmbed();
+              runPricingChangeOption();
+              url = location.href;
+            }
+          });
+        });
+      }
+
+
+      const runAccordionCodeEmbed = () => {
+          const accordionContainers = document.querySelectorAll('[data-role="accordion-container"]'); // All accordion containers
+          const accordionContents = document.querySelectorAll('[data-role="accordion-content"]'); // All accordion content
+          const accordionIcons = document.querySelectorAll('[data-role="accordion-icon"]'); // All accordion icons
+
+          accordionContents.forEach((accordionContent, index) => {
+            if(!accordionContent.classList.contains('default-show')){ //Hides all accordion contents, except the first one
+              accordionContent.style.display = "none"; //Hides all accordion contents
+            }
+          });
+
+          accordionContainers.forEach((accordionContainer, index) => {
+              accordionContainer.addEventListener("click", () => {
+                  accordionContents.forEach((accordionContent) => {
+                  accordionContent.style.display = "none"; //Hides all accordion contents
+                  });
+
+                  accordionIcons.forEach((accordionIcon) => {
+                      accordionIcon.style.transform = "rotate(0deg)"; // Resets all icon transforms to 0deg (default)
+                  });
+
+                  accordionContents[index].style.display = "flex"; // Shows accordion content
+                  accordionIcons[index].style.transform = "rotate(180deg)"; // Rotates accordion icon 180deg
+              });
+          });
+      }
+
+      const runPricingChangeOption = () => {
+        if($){
+          $(document).on('change','#team_plan_option', (evt) => {
+            const val = parseInt(evt.target.value);
+            switch(val){
+              case 1:
+                $('#team_plan_price').html('89');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=13');
+                break;
+              case 2:
+                $('#team_plan_price').html('119');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=14');
+                break;
+              case 3:
+                $('#team_plan_price').html('159');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=15');
+                break;
+              case 4:
+                $('#team_plan_price').html('249');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=16');
+                break;
+            }
+          });
+        }
+      }
+
+      runAccordionCodeEmbed()
+      listenForUrlChangesAccordion()
+
+      /*
+      Here's what the above is doing:
+          1. Selects all accordion containers, contents, and icons
+          2. Hides all accordion contents
+          3. Adds an event listener to each accordion container
+          4. When an accordion container is clicked, it:
+              - Hides all accordion contents
+              - Resets all icon transforms to 0deg (default)
+              - Checks if this container has class "accordion-open"
+                  - If it does, it removes class "accordion-open"
+                  - If it doesn't, it:
+                      - Removes class "accordion-open" from all containers
+                      - Adds class "accordion-open" to this container
+                      - Shows accordion content
+                      - Rotates accordion icon 180deg
+      */
+    </script>
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1553066931916834');
+      fbq('track', 'PageView');
+    </script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="../style.css" />
+    <div>
+      <link href="./free-quote-modal.css" rel="stylesheet" />
+      <div class="free-quote-modal-free-quote-modal">
+        <div class="free-quote-modal-frame2183">
+          <span class="free-quote-modal-text">Questions About Pricing?</span>
+          <span class="free-quote-modal-text01 Content">
+            <span>Get your free quote today</span>
+          </span>
+        </div>
+        <div class="free-quote-modal-frame2178">
+          <img
+            alt="IconOutlinedClose1596"
+            src="public/external/iconoutlinedclose1596-i8zh.svg"
+            class="free-quote-modal-icon-outlined-close"
+          />
+        </div>
+        <div class="free-quote-modal-frame2181 Content">
+          <div class="free-quote-modal-frame2182">
+            <span class="free-quote-modal-text03 Content">
+              <span>Title</span>
+            </span>
+            <select name="title" class="free-quote-modal-select">
+              <option
+                hidden="true"
+                disabled="true"
+                class="free-quote-modal-option"
+              >
+                Select Your Title
+              </option>
+              <option value="Mr." class="free-quote-modal-option1">Mr.</option>
+              <option value="Mrs." class="free-quote-modal-option2">
+                Mrs.
+              </option>
+              <option value="Miss" class="free-quote-modal-option3">
+                Miss
+              </option>
+              <option value="Ms." class="free-quote-modal-option4">Ms.</option>
+            </select>
+          </div>
+          <div class="free-quote-modal-frame2179">
+            <span class="free-quote-modal-text05 Content">
+              <span>Name</span>
+            </span>
+            <input
+              type="text"
+              name="name"
+              placeholder="Enter your Name"
+              class="free-quote-modal-input-basic"
+            />
+          </div>
+          <div class="free-quote-modal-frame2180">
+            <span class="free-quote-modal-text07 Content">
+              <span>Email</span>
+            </span>
+            <input
+              type="text"
+              name="email"
+              placeholder="Enter your Email"
+              class="free-quote-modal-input-basic1 Content"
+            />
+          </div>
+          <div class="free-quote-modal-frame21811">
+            <span class="free-quote-modal-text09 Content">
+              <span>Phone Number</span>
+            </span>
+            <input
+              type="text"
+              name="phone_number"
+              placeholder="Enter your Phone Number"
+              class="free-quote-modal-input-basic2 Content"
+            />
+          </div>
+        </div>
+        <button class="free-quote-modal-button">
+          <div class="free-quote-modal-content">
+            <span class="free-quote-modal-text11">
+              <span>Get Your Free Quote</span>
+            </span>
+          </div>
+        </button>
+      </div>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://www.googletagmanager.com/gtag/js?id=G-VTH6EHSE13"
+      async=""
+    ></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-VTH6EHSE13');
+    </script>
+    <script type="text/javascript">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','G-VTH6EHSE13');
+    </script>
+    <script
+      data-section-id="header"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,797 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Real Estate Transaction Management &amp; Coordinator Software | EZ
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+        fill: var(--dl-color-gray-black);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="public/ez-favicon.svg"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #246b96;//magic
+       }
+    </style>
+    <style data-section-id="dropdown">
+      [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
+          display: flex;
+        }
+
+        [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
+          transform: rotate(90deg);
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_MEASUREMENT_ID%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '%REACT_APP_GA_MEASUREMENT_ID%');
+  </script> -->
+
+    <!-- Lucky Orange -->
+
+    <!-- FreshChat -->
+    <!-- <script src='//fw-cdn.com/2736569/3088424.js' chat='true'></script> -->
+
+    <!-- Freshdesk -->
+
+    <!-- Meta Pixel Code -->
+
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1553066931916834&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    <script
+      async=""
+      src="https://cdn.tolt.io/tolt.js"
+      data-tolt="81e6dc34-d8f3-4443-a30c-e2d31cba595f"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script
+      async=""
+      defer=""
+      src="https://tools.luckyorange.com/core/lo.js?site-id=18537fa4"
+    ></script>
+    <script>
+      window.fwSettings={
+      'widget_id':151000001468
+      };
+      !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
+    </script>
+    <script
+      type="text/javascript"
+      src="https://widget.freshworks.com/widgets/151000001468.js"
+      async=""
+      defer=""
+    ></script>
+    <script>
+          /*
+      Accordion - Code Embed
+      */
+
+      /* listenForUrlChangesAccordion() makes sure that if you changes pages inside your app,
+      the Accordions will still work*/
+
+      const listenForUrlChangesAccordion = () => {
+        let url = location.href;
+        $(document).on('click', () => {
+          requestAnimationFrame(() => {
+            if (url !== location.href) {
+              runAccordionCodeEmbed();
+              runPricingChangeOption();
+              url = location.href;
+            }
+          });
+        });
+      }
+
+
+      const runAccordionCodeEmbed = () => {
+          const accordionContainers = document.querySelectorAll('[data-role="accordion-container"]'); // All accordion containers
+          const accordionContents = document.querySelectorAll('[data-role="accordion-content"]'); // All accordion content
+          const accordionIcons = document.querySelectorAll('[data-role="accordion-icon"]'); // All accordion icons
+
+          accordionContents.forEach((accordionContent, index) => {
+            if(!accordionContent.classList.contains('default-show')){ //Hides all accordion contents, except the first one
+              accordionContent.style.display = "none"; //Hides all accordion contents
+            }
+          });
+
+          accordionContainers.forEach((accordionContainer, index) => {
+              accordionContainer.addEventListener("click", () => {
+                  accordionContents.forEach((accordionContent) => {
+                  accordionContent.style.display = "none"; //Hides all accordion contents
+                  });
+
+                  accordionIcons.forEach((accordionIcon) => {
+                      accordionIcon.style.transform = "rotate(0deg)"; // Resets all icon transforms to 0deg (default)
+                  });
+
+                  accordionContents[index].style.display = "flex"; // Shows accordion content
+                  accordionIcons[index].style.transform = "rotate(180deg)"; // Rotates accordion icon 180deg
+              });
+          });
+      }
+
+      const runPricingChangeOption = () => {
+        if($){
+          $(document).on('change','#team_plan_option', (evt) => {
+            const val = parseInt(evt.target.value);
+            switch(val){
+              case 1:
+                $('#team_plan_price').html('89');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=13');
+                break;
+              case 2:
+                $('#team_plan_price').html('119');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=14');
+                break;
+              case 3:
+                $('#team_plan_price').html('159');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=15');
+                break;
+              case 4:
+                $('#team_plan_price').html('249');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=16');
+                break;
+            }
+          });
+        }
+      }
+
+      runAccordionCodeEmbed()
+      listenForUrlChangesAccordion()
+
+      /*
+      Here's what the above is doing:
+          1. Selects all accordion containers, contents, and icons
+          2. Hides all accordion contents
+          3. Adds an event listener to each accordion container
+          4. When an accordion container is clicked, it:
+              - Hides all accordion contents
+              - Resets all icon transforms to 0deg (default)
+              - Checks if this container has class "accordion-open"
+                  - If it does, it removes class "accordion-open"
+                  - If it doesn't, it:
+                      - Removes class "accordion-open" from all containers
+                      - Adds class "accordion-open" to this container
+                      - Shows accordion content
+                      - Rotates accordion icon 180deg
+      */
+    </script>
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1553066931916834');
+      fbq('track', 'PageView');
+    </script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="../style.css" />
+    <div>
+      <link href="./navigation-no-auth-buttons.css" rel="stylesheet" />
+      <section class="navigation-no-auth-buttons-navigation-non-home">
+        <div class="navigation-no-auth-buttons-menu">
+          <div
+            id="mobile-menu"
+            class="navigation-no-auth-buttons-mobile-navigation"
+          >
+            <img
+              alt="pastedImage"
+              src="public/pastedimage-no9b-1500h.png"
+              class="navigation-no-auth-buttons-logo"
+            />
+            <div class="navigation-no-auth-buttons-links">
+              <span class="Link"><span>Solutions</span></span>
+              <span class="Link"><span>How it works</span></span>
+              <span class="Link"><span>Prices</span></span>
+            </div>
+            <div
+              id="close-mobile-menu"
+              class="navigation-no-auth-buttons-close-mobile-menu"
+            >
+              <svg
+                viewBox="0 0 804.5714285714286 1024"
+                class="navigation-no-auth-buttons-icon"
+              >
+                <path
+                  d="M741.714 755.429c0 14.286-5.714 28.571-16 38.857l-77.714 77.714c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-168-168-168 168c-10.286 10.286-24.571 16-38.857 16s-28.571-5.714-38.857-16l-77.714-77.714c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l168-168-168-168c-10.286-10.286-16-24.571-16-38.857s5.714-28.571 16-38.857l77.714-77.714c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l168 168 168-168c10.286-10.286 24.571-16 38.857-16s28.571 5.714 38.857 16l77.714 77.714c10.286 10.286 16 24.571 16 38.857s-5.714 28.571-16 38.857l-168 168 168 168c10.286 10.286 16 24.571 16 38.857z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <header data-role="Header" class="navigation-no-auth-buttons-header">
+            <a href="index.html" class="navigation-no-auth-buttons-navlink">
+              <img
+                alt="logo"
+                src="public/logos/logo-512w-1500h.png"
+                class="navigation-no-auth-buttons-image"
+              />
+            </a>
+            <div class="navigation-no-auth-buttons-nav">
+              <nav
+                class="navigation-links-nav navigation-links-root-class-name8"
+              >
+                <a href="index.html" class="navigation-links-navlink">
+                  <span>Home</span>
+                </a>
+                <a href="features-page.html" class="navigation-links-navlink01">
+                  <span>Features</span>
+                </a>
+                <a
+                  href="how-it-works-page.html"
+                  class="navigation-links-navlink02"
+                >
+                  <span>How it Works</span>
+                </a>
+                <a href="pricing-page.html" class="navigation-links-navlink03">
+                  <span>Pricing</span>
+                </a>
+                <div
+                  data-thq="thq-dropdown"
+                  class="navigation-links-thq-dropdown list-item"
+                >
+                  <div
+                    data-thq="thq-dropdown-toggle"
+                    class="navigation-links-dropdown-toggle"
+                  >
+                    <span class="navigation-links-text">Resources</span>
+                    <div
+                      data-thq="thq-dropdown-arrow"
+                      class="navigation-links-dropdown-arrow"
+                    >
+                      <svg
+                        viewBox="0 0 1024 1024"
+                        class="navigation-links-icon"
+                      >
+                        <path d="M426 726v-428l214 214z"></path>
+                      </svg>
+                    </div>
+                  </div>
+                  <ul
+                    data-thq="thq-dropdown-list"
+                    class="navigation-links-dropdown-list"
+                  >
+                    <li
+                      data-thq="thq-dropdown"
+                      class="navigation-links-dropdown list-item"
+                    >
+                      <div
+                        data-thq="thq-dropdown-toggle"
+                        class="navigation-links-dropdown-toggle01"
+                      >
+                        <a
+                          href="customers-page.html"
+                          class="navigation-links-text01"
+                        >
+                          Customers
+                        </a>
+                        <div
+                          data-thq="thq-dropdown-arrow"
+                          class="navigation-links-dropdown-arrow1"
+                        >
+                          <svg
+                            viewBox="0 0 1024 1024"
+                            class="navigation-links-icon2"
+                          >
+                            <path d="M426 726v-428l214 214z"></path>
+                          </svg>
+                        </div>
+                      </div>
+                      <ul
+                        data-thq="thq-dropdown-list"
+                        class="navigation-links-dropdown-list1"
+                      >
+                        <li
+                          data-thq="thq-dropdown"
+                          class="navigation-links-dropdown1 list-item"
+                        >
+                          <a href="customers-page.html">
+                            <div
+                              data-thq="thq-dropdown-toggle"
+                              class="navigation-links-dropdown-toggle02"
+                            >
+                              <span class="navigation-links-text02">
+                                Who uses EZ
+                              </span>
+                            </div>
+                          </a>
+                        </li>
+                        <li
+                          data-thq="thq-dropdown"
+                          class="navigation-links-dropdown2 list-item"
+                        >
+                          <a href="customers-brokers-page.html">
+                            <div
+                              data-thq="thq-dropdown-toggle"
+                              class="navigation-links-dropdown-toggle03"
+                            >
+                              <span class="navigation-links-text03">
+                                Brokers
+                              </span>
+                            </div>
+                          </a>
+                        </li>
+                        <li
+                          data-thq="thq-dropdown"
+                          class="navigation-links-dropdown3 list-item"
+                        >
+                          <a href="customers-agents-page.html">
+                            <div
+                              data-thq="thq-dropdown-toggle"
+                              class="navigation-links-dropdown-toggle04"
+                            >
+                              <span class="navigation-links-text04">
+                                Agents
+                              </span>
+                            </div>
+                          </a>
+                        </li>
+                        <li
+                          data-thq="thq-dropdown"
+                          class="navigation-links-dropdown4 list-item"
+                        >
+                          <a href="customers-t-cs-page.html">
+                            <div
+                              data-thq="thq-dropdown-toggle"
+                              class="navigation-links-dropdown-toggle05"
+                            >
+                              <span class="navigation-links-text05">
+                                Coordinators
+                              </span>
+                            </div>
+                          </a>
+                        </li>
+                      </ul>
+                    </li>
+                    <li
+                      data-thq="thq-dropdown"
+                      class="navigation-links-dropdown5 list-item"
+                    >
+                      <a href="docu-sign-page.html">
+                        <div
+                          data-thq="thq-dropdown-toggle"
+                          class="navigation-links-dropdown-toggle06"
+                        >
+                          <span class="navigation-links-text06">DocuSign</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li
+                      data-thq="thq-dropdown"
+                      class="navigation-links-dropdown6 list-item"
+                    >
+                      <a href="errors-and-omissions-page.html">
+                        <div
+                          data-thq="thq-dropdown-toggle"
+                          class="navigation-links-dropdown-toggle07"
+                        >
+                          <span class="navigation-links-text07">E &amp; O</span>
+                        </div>
+                      </a>
+                    </li>
+                    <li
+                      data-thq="thq-dropdown"
+                      class="navigation-links-dropdown7 list-item"
+                    >
+                      <a href="affiliate-program-page.html">
+                        <div
+                          data-thq="thq-dropdown-toggle"
+                          class="navigation-links-dropdown-toggle08"
+                        >
+                          <span class="navigation-links-text08">
+                            Affiliate Program
+                          </span>
+                        </div>
+                      </a>
+                    </li>
+                    <li
+                      data-thq="thq-dropdown"
+                      class="navigation-links-dropdown8 list-item"
+                    >
+                      <a href="fa-qs-page.html">
+                        <div
+                          data-thq="thq-dropdown-toggle"
+                          class="navigation-links-dropdown-toggle09"
+                        >
+                          <span class="navigation-links-text09">FAQs</span>
+                        </div>
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
+            </div>
+            <div
+              id="auth-button-group"
+              class="navigation-no-auth-buttons-btn-group"
+            >
+              <a
+                href="https://app.ezcoordinator.com/login"
+                class="navigation-no-auth-buttons-login button"
+              >
+                Login
+              </a>
+              <a
+                href="https://app.ezcoordinator.com/register"
+                target="_blank"
+                rel="noreferrer noopener"
+                class="navigation-no-auth-buttons-register button"
+              >
+                Register
+              </a>
+            </div>
+            <div
+              data-role="BurgerMenu"
+              class="navigation-no-auth-buttons-burger-menu"
+            >
+              <svg
+                viewBox="0 0 1024 1024"
+                class="navigation-no-auth-buttons-icon2"
+              >
+                <path
+                  d="M128 554.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 298.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667zM128 810.667h768c23.552 0 42.667-19.115 42.667-42.667s-19.115-42.667-42.667-42.667h-768c-23.552 0-42.667 19.115-42.667 42.667s19.115 42.667 42.667 42.667z"
+                ></path>
+              </svg>
+            </div>
+            <div
+              id="MobileMenu_1"
+              data-role="MobileMenu"
+              class="navigation-no-auth-buttons-mobile-menu"
+            >
+              <div class="navigation-no-auth-buttons-nav1">
+                <div class="navigation-no-auth-buttons-container">
+                  <img
+                    alt="image"
+                    src="public/logos/logo1-1500h.png"
+                    class="navigation-no-auth-buttons-image1"
+                  />
+                  <div
+                    data-role="CloseMobileMenu"
+                    class="navigation-no-auth-buttons-menu-close"
+                  >
+                    <svg
+                      viewBox="0 0 1024 1024"
+                      class="navigation-no-auth-buttons-icon4"
+                    >
+                      <path
+                        d="M810 274l-238 238 238 238-60 60-238-238-238 238-60-60 238-238-238-238 60-60 238 238 238-238z"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+                <nav
+                  class="navigation-links-nav navigation-links-root-class-name9"
+                >
+                  <a href="index.html" class="navigation-links-navlink">
+                    <span>Home</span>
+                  </a>
+                  <a
+                    href="features-page.html"
+                    class="navigation-links-navlink01"
+                  >
+                    <span>Features</span>
+                  </a>
+                  <a
+                    href="how-it-works-page.html"
+                    class="navigation-links-navlink02"
+                  >
+                    <span>How it Works</span>
+                  </a>
+                  <a
+                    href="pricing-page.html"
+                    class="navigation-links-navlink03"
+                  >
+                    <span>Pricing</span>
+                  </a>
+                  <div
+                    data-thq="thq-dropdown"
+                    class="navigation-links-thq-dropdown list-item"
+                  >
+                    <div
+                      data-thq="thq-dropdown-toggle"
+                      class="navigation-links-dropdown-toggle"
+                    >
+                      <span class="navigation-links-text">Resources</span>
+                      <div
+                        data-thq="thq-dropdown-arrow"
+                        class="navigation-links-dropdown-arrow"
+                      >
+                        <svg
+                          viewBox="0 0 1024 1024"
+                          class="navigation-links-icon"
+                        >
+                          <path d="M426 726v-428l214 214z"></path>
+                        </svg>
+                      </div>
+                    </div>
+                    <ul
+                      data-thq="thq-dropdown-list"
+                      class="navigation-links-dropdown-list"
+                    >
+                      <li
+                        data-thq="thq-dropdown"
+                        class="navigation-links-dropdown list-item"
+                      >
+                        <div
+                          data-thq="thq-dropdown-toggle"
+                          class="navigation-links-dropdown-toggle01"
+                        >
+                          <a
+                            href="customers-page.html"
+                            class="navigation-links-text01"
+                          >
+                            Customers
+                          </a>
+                          <div
+                            data-thq="thq-dropdown-arrow"
+                            class="navigation-links-dropdown-arrow1"
+                          >
+                            <svg
+                              viewBox="0 0 1024 1024"
+                              class="navigation-links-icon2"
+                            >
+                              <path d="M426 726v-428l214 214z"></path>
+                            </svg>
+                          </div>
+                        </div>
+                        <ul
+                          data-thq="thq-dropdown-list"
+                          class="navigation-links-dropdown-list1"
+                        >
+                          <li
+                            data-thq="thq-dropdown"
+                            class="navigation-links-dropdown1 list-item"
+                          >
+                            <a href="customers-page.html">
+                              <div
+                                data-thq="thq-dropdown-toggle"
+                                class="navigation-links-dropdown-toggle02"
+                              >
+                                <span class="navigation-links-text02">
+                                  Who uses EZ
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li
+                            data-thq="thq-dropdown"
+                            class="navigation-links-dropdown2 list-item"
+                          >
+                            <a href="customers-brokers-page.html">
+                              <div
+                                data-thq="thq-dropdown-toggle"
+                                class="navigation-links-dropdown-toggle03"
+                              >
+                                <span class="navigation-links-text03">
+                                  Brokers
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li
+                            data-thq="thq-dropdown"
+                            class="navigation-links-dropdown3 list-item"
+                          >
+                            <a href="customers-agents-page.html">
+                              <div
+                                data-thq="thq-dropdown-toggle"
+                                class="navigation-links-dropdown-toggle04"
+                              >
+                                <span class="navigation-links-text04">
+                                  Agents
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                          <li
+                            data-thq="thq-dropdown"
+                            class="navigation-links-dropdown4 list-item"
+                          >
+                            <a href="customers-t-cs-page.html">
+                              <div
+                                data-thq="thq-dropdown-toggle"
+                                class="navigation-links-dropdown-toggle05"
+                              >
+                                <span class="navigation-links-text05">
+                                  Coordinators
+                                </span>
+                              </div>
+                            </a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li
+                        data-thq="thq-dropdown"
+                        class="navigation-links-dropdown5 list-item"
+                      >
+                        <a href="docu-sign-page.html">
+                          <div
+                            data-thq="thq-dropdown-toggle"
+                            class="navigation-links-dropdown-toggle06"
+                          >
+                            <span class="navigation-links-text06">
+                              DocuSign
+                            </span>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        data-thq="thq-dropdown"
+                        class="navigation-links-dropdown6 list-item"
+                      >
+                        <a href="errors-and-omissions-page.html">
+                          <div
+                            data-thq="thq-dropdown-toggle"
+                            class="navigation-links-dropdown-toggle07"
+                          >
+                            <span class="navigation-links-text07">
+                              E &amp; O
+                            </span>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        data-thq="thq-dropdown"
+                        class="navigation-links-dropdown7 list-item"
+                      >
+                        <a href="affiliate-program-page.html">
+                          <div
+                            data-thq="thq-dropdown-toggle"
+                            class="navigation-links-dropdown-toggle08"
+                          >
+                            <span class="navigation-links-text08">
+                              Affiliate Program
+                            </span>
+                          </div>
+                        </a>
+                      </li>
+                      <li
+                        data-thq="thq-dropdown"
+                        class="navigation-links-dropdown8 list-item"
+                      >
+                        <a href="fa-qs-page.html">
+                          <div
+                            data-thq="thq-dropdown-toggle"
+                            class="navigation-links-dropdown-toggle09"
+                          >
+                            <span class="navigation-links-text09">FAQs</span>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                </nav>
+              </div>
+            </div>
+          </header>
+          <div>
+            <div class="navigation-no-auth-buttons-container2">
+              <script>
+                /*
+                Mobile menu - Code Embed
+                */
+
+                // Mobile menu
+                const mobileMenu = document.querySelector('#mobile-menu')
+
+                // Buttons
+                const closeButton = document.querySelector('#close-mobile-menu')
+                const openButton = document.querySelector('#open-mobile-menu')
+
+                // On openButton click, set the mobileMenu position left to -100vw
+                openButton.addEventListener('click', function() {
+                    mobileMenu.style.transform = 'translateX(0%)'
+                })
+
+                // On closeButton click, set the mobileMenu position to 0vw
+                closeButton.addEventListener('click', function() {
+                    mobileMenu.style.transform = 'translateX(100%)'
+                })
+              </script>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://www.googletagmanager.com/gtag/js?id=G-VTH6EHSE13"
+      async=""
+    ></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-VTH6EHSE13');
+    </script>
+    <script type="text/javascript">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','G-VTH6EHSE13');
+    </script>
+    <script
+      data-section-id="header"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>
+      Real Estate Transaction Management &amp; Coordinator Software | EZ
+    </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="utf-8" />
+    <meta property="twitter:card" content="summary_large_image" />
+
+    <style data-tag="reset-style-sheet">
+      html {  line-height: 1.15;}body {  margin: 0;}* {  box-sizing: border-box;  border-width: 0;  border-style: solid;}p,li,ul,pre,div,h1,h2,h3,h4,h5,h6,figure,blockquote,figcaption {  margin: 0;  padding: 0;}button {  background-color: transparent;}button,input,optgroup,select,textarea {  font-family: inherit;  font-size: 100%;  line-height: 1.15;  margin: 0;}button,select {  text-transform: none;}button,[type="button"],[type="reset"],[type="submit"] {  -webkit-appearance: button;}button::-moz-focus-inner,[type="button"]::-moz-focus-inner,[type="reset"]::-moz-focus-inner,[type="submit"]::-moz-focus-inner {  border-style: none;  padding: 0;}button:-moz-focus,[type="button"]:-moz-focus,[type="reset"]:-moz-focus,[type="submit"]:-moz-focus {  outline: 1px dotted ButtonText;}a {  color: inherit;  text-decoration: inherit;}input {  padding: 2px 4px;}img {  display: block;}html { scroll-behavior: smooth  }
+    </style>
+    <style data-tag="default-style-sheet">
+      html {
+        font-family: Inter;
+        font-size: 16px;
+      }
+
+      body {
+        font-weight: 400;
+        font-style:normal;
+        text-decoration: none;
+        text-transform: none;
+        letter-spacing: normal;
+        line-height: 1.15;
+        color: var(--dl-color-gray-black);
+        background-color: var(--dl-color-gray-white);
+
+        fill: var(--dl-color-gray-black);
+      }
+    </style>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/animate.css@4.1.1/animate.css"
+    />
+    <link
+      rel="shortcut icon"
+      href="public/ez-favicon.svg"
+      type="icon/png"
+      sizes="32x32"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+      data-tag="font"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/@teleporthq/teleport-custom-scripts/dist/style.css"
+    />
+
+    <style>
+       body::-webkit-scrollbar {
+         width: 0.5em;
+         z-index: 100;
+         background-color:transparent;
+       }
+
+
+      body::-webkit-scrollbar-thumb {
+         background-color:white;
+         box-shadow:0 -100vh 0 100vh #246b96;//magic
+       }
+    </style>
+    <style data-section-id="dropdown">
+      [data-thq="thq-dropdown"]:hover > [data-thq="thq-dropdown-list"] {
+          display: flex;
+        }
+
+        [data-thq="thq-dropdown"]:hover > div [data-thq="thq-dropdown-arrow"] {
+          transform: rotate(90deg);
+        }
+    </style>
+
+    <!-- Google Analytics -->
+    <!-- Google tag (gtag.js) -->
+    <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=%REACT_APP_GA_MEASUREMENT_ID%"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', '%REACT_APP_GA_MEASUREMENT_ID%');
+  </script> -->
+
+    <!-- Lucky Orange -->
+
+    <!-- FreshChat -->
+    <!-- <script src='//fw-cdn.com/2736569/3088424.js' chat='true'></script> -->
+
+    <!-- Freshdesk -->
+
+    <!-- Meta Pixel Code -->
+
+    <noscript>
+      <img
+        height="1"
+        width="1"
+        style="display:none"
+        src="https://www.facebook.com/tr?id=1553066931916834&ev=PageView&noscript=1"
+      />
+    </noscript>
+    <!-- End Meta Pixel Code -->
+    <script
+      async=""
+      src="https://cdn.tolt.io/tolt.js"
+      data-tolt="81e6dc34-d8f3-4443-a30c-e2d31cba595f"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script
+      async=""
+      defer=""
+      src="https://tools.luckyorange.com/core/lo.js?site-id=18537fa4"
+    ></script>
+    <script>
+      window.fwSettings={
+      'widget_id':151000001468
+      };
+      !function(){if("function"!=typeof window.FreshworksWidget){var n=function(){n.q.push(arguments)};n.q=[],window.FreshworksWidget=n}}()
+    </script>
+    <script
+      type="text/javascript"
+      src="https://widget.freshworks.com/widgets/151000001468.js"
+      async=""
+      defer=""
+    ></script>
+    <script>
+          /*
+      Accordion - Code Embed
+      */
+
+      /* listenForUrlChangesAccordion() makes sure that if you changes pages inside your app,
+      the Accordions will still work*/
+
+      const listenForUrlChangesAccordion = () => {
+        let url = location.href;
+        $(document).on('click', () => {
+          requestAnimationFrame(() => {
+            if (url !== location.href) {
+              runAccordionCodeEmbed();
+              runPricingChangeOption();
+              url = location.href;
+            }
+          });
+        });
+      }
+
+
+      const runAccordionCodeEmbed = () => {
+          const accordionContainers = document.querySelectorAll('[data-role="accordion-container"]'); // All accordion containers
+          const accordionContents = document.querySelectorAll('[data-role="accordion-content"]'); // All accordion content
+          const accordionIcons = document.querySelectorAll('[data-role="accordion-icon"]'); // All accordion icons
+
+          accordionContents.forEach((accordionContent, index) => {
+            if(!accordionContent.classList.contains('default-show')){ //Hides all accordion contents, except the first one
+              accordionContent.style.display = "none"; //Hides all accordion contents
+            }
+          });
+
+          accordionContainers.forEach((accordionContainer, index) => {
+              accordionContainer.addEventListener("click", () => {
+                  accordionContents.forEach((accordionContent) => {
+                  accordionContent.style.display = "none"; //Hides all accordion contents
+                  });
+
+                  accordionIcons.forEach((accordionIcon) => {
+                      accordionIcon.style.transform = "rotate(0deg)"; // Resets all icon transforms to 0deg (default)
+                  });
+
+                  accordionContents[index].style.display = "flex"; // Shows accordion content
+                  accordionIcons[index].style.transform = "rotate(180deg)"; // Rotates accordion icon 180deg
+              });
+          });
+      }
+
+      const runPricingChangeOption = () => {
+        if($){
+          $(document).on('change','#team_plan_option', (evt) => {
+            const val = parseInt(evt.target.value);
+            switch(val){
+              case 1:
+                $('#team_plan_price').html('89');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=13');
+                break;
+              case 2:
+                $('#team_plan_price').html('119');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=14');
+                break;
+              case 3:
+                $('#team_plan_price').html('159');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=15');
+                break;
+              case 4:
+                $('#team_plan_price').html('249');
+                $('#ez_team_plan_button').parent().attr('href','https://app.ezcoordinator.com/register?subscription=16');
+                break;
+            }
+          });
+        }
+      }
+
+      runAccordionCodeEmbed()
+      listenForUrlChangesAccordion()
+
+      /*
+      Here's what the above is doing:
+          1. Selects all accordion containers, contents, and icons
+          2. Hides all accordion contents
+          3. Adds an event listener to each accordion container
+          4. When an accordion container is clicked, it:
+              - Hides all accordion contents
+              - Resets all icon transforms to 0deg (default)
+              - Checks if this container has class "accordion-open"
+                  - If it does, it removes class "accordion-open"
+                  - If it doesn't, it:
+                      - Removes class "accordion-open" from all containers
+                      - Adds class "accordion-open" to this container
+                      - Shows accordion content
+                      - Rotates accordion icon 180deg
+      */
+    </script>
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '1553066931916834');
+      fbq('track', 'PageView');
+    </script>
+  </head>
+  <body>
+    <link rel="stylesheet" href="../style.css" />
+    <div>
+      <link href="./how-it-works.css" rel="stylesheet" />
+      <section class="how-it-works-how-it-works">
+        <div class="how-it-works-centered-container">
+          <div class="how-it-works-heading">
+            <span class="how-it-works-text"><span>How it works</span></span>
+            <span class="how-it-works-text01 title">
+              <span>See how EZ Coordinator can help manage your listing</span>
+            </span>
+          </div>
+          <div class="how-it-works-category">
+            <div class="how-it-works-headng">
+              <span class="how-it-works-text02">
+                <span>1 — Add new transaction</span>
+              </span>
+              <span class="how-it-works-text03">
+                <span>
+                  Setting up a new transaction is quick and easy. The first
+                  thing you'll do is enter your relevant transaction information
+                  (address, agents, buyer/seller, etc...). Next, you can add
+                  additional contacts that are related to the transaction such
+                  as title, escrow, lenders, etc...
+                </span>
+              </span>
+            </div>
+            <div class="how-it-works-container">
+              <img
+                alt="pastedImage"
+                src="public/screenshots/screenshot%202023-02-11%20at%2022.02.45-500w.png"
+                class="how-it-works-pasted-image"
+              />
+            </div>
+          </div>
+          <div class="how-it-works-row">
+            <div class="how-it-works-category1">
+              <div class="how-it-works-headng1">
+                <span class="how-it-works-text04">
+                  <span>2 — Upload, share, sign your documents</span>
+                </span>
+                <span class="how-it-works-text05">
+                  <span>
+                    The drag-and-drop feature allows you to upload the
+                    documents, or move them around. Collect e-signatures with
+                    DocuSign®, which is directly integrated into the program,
+                    and share data in real time with your team, or other
+                    appropriate parties.
+                  </span>
+                </span>
+              </div>
+              <img
+                alt="pastedImage"
+                src="public/screenshots/screenshot%202023-02-11%20at%2022.05%201-1200w.png"
+                class="how-it-works-pasted-image1"
+              />
+            </div>
+            <div class="how-it-works-category2">
+              <div class="how-it-works-headng2">
+                <span class="how-it-works-text06">
+                  <span>3 — Schedule tasks</span>
+                </span>
+                <span class="how-it-works-text07">
+                  <span>
+                    Keep track of important due dates in each transaction on
+                    your calendar. Set up email alerts so you are reminded when
+                    as task or critical date is about to expire.
+                  </span>
+                  <br />
+                </span>
+              </div>
+              <img
+                alt="pastedImage"
+                src="public/screenshots/screenshot%202023-02-11%20at%2022.06.48-1200w.png"
+                class="how-it-works-pasted-image2"
+              />
+            </div>
+          </div>
+          <div class="how-it-works-category3">
+            <div class="how-it-works-container1">
+              <img
+                alt="pastedImage"
+                src="public/screenshots/screenshot%202023-02-11%20at%2022.10.14-600w.png"
+                class="how-it-works-pasted-image3"
+              />
+            </div>
+            <div class="how-it-works-headng3">
+              <span class="how-it-works-text10">
+                <span>4 — Review documents for compliance</span>
+              </span>
+              <span class="how-it-works-text11">
+                <span>
+                  Ready to close? Review your documents for compliance to make
+                  sure everything is in perfect order. You can easily ensure the
+                  file is complete, and then close the deal and get paid!
+                </span>
+                <br />
+              </span>
+              <a
+                href="https://app.ezcoordinator.com/register"
+                class="how-it-works-link"
+              >
+                <div class="how-it-works-get-started template-button">
+                  <span class="how-it-works-text14">
+                    <span>Get started</span>
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script
+      type="text/javascript"
+      src="https://www.googletagmanager.com/gtag/js?id=G-VTH6EHSE13"
+      async=""
+    ></script>
+    <script type="text/javascript">
+      window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+              gtag('config', 'G-VTH6EHSE13');
+    </script>
+    <script type="text/javascript">
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','G-VTH6EHSE13');
+    </script>
+    <script
+      data-section-id="header"
+      src="https://unpkg.com/@teleporthq/teleport-custom-scripts"
+    ></script>
+  </body>
+</html>
